@@ -66,7 +66,7 @@ class ResizeLogic
             'quality'=>null,
             'generateNewFile'=>true,
             'suffixSize'=>true,
-            'overwrite'=>true,
+            'overwrite'=>false,
         ]);
     }
     
