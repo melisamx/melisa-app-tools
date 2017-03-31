@@ -19,6 +19,7 @@ class ModulesSeeder extends Seeder
     public function image()
     {        
         $this->call(Modules\Image\ResizeSeeder::class);
+        $this->call(Modules\Image\WatermarkSeeder::class);
     }
     
     public function barcode()
