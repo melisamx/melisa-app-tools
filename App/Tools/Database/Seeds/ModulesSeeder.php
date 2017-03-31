@@ -11,10 +11,19 @@ class ModulesSeeder extends Seeder
 {
     
     public function run()
-    {
-        
+    {        
+        $this->barcode();
+        $this->image();        
+    }
+    
+    public function image()
+    {        
+        $this->call(Modules\Image\ResizeSeeder::class);
+    }
+    
+    public function barcode()
+    {        
         $this->call(Modules\BarcordesSeeder::class);
-        
     }
     
 }
