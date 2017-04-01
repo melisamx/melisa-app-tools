@@ -24,10 +24,17 @@ class WatermarkSeeder extends InstallSeeder
                     'description'=>'Permitir agregar marca de agua a imagen',
                     'pattern'=>'create'
                 ],
-                'event'=>[
-                    'key'=>'event.tools.image.watermark.success',
-                    'description'=>'Se agrego marca de agua a imagen correctamente'
+                'events'=>[
+                    [
+                        'key'=>'event.tools.image.watermark.success',
+                        'description'=>'Se agrego marca de agua a imagen correctamente'
+                    ],
+                    [
+                        'key'=>'event.tools.image.watermark',
+                        'description'=>'Se solicita agregar marca de agua a imagen'
+                    ],
                 ],
+                'listener'=>'event.tools.image.watermark',
             ],
         ]);
         

@@ -24,10 +24,17 @@ class ResizeSeeder extends InstallSeeder
                     'description'=>'Permitir redimensionar imagen',
                     'pattern'=>'create'
                 ],
-                'event'=>[
-                    'key'=>'event.tools.image.resize.success',
-                    'description'=>'Imagen redimensionada correctamente'
+                'events'=>[
+                    [
+                        'key'=>'event.tools.image.resize.success',
+                        'description'=>'Imagen redimensionada correctamente'
+                    ],
+                    [
+                        'key'=>'event.tools.image.resize',
+                        'description'=>'Se solicita redimensionar imagen'
+                    ],
                 ],
+                'listener'=>'event.tools.image.resize',
             ],
         ]);
         

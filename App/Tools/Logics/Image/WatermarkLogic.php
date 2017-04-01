@@ -20,6 +20,10 @@ class WatermarkLogic
     public function init(array $input)
     {
         
+        $this->debug('Init logic watermark {d}', [
+            'd'=>json_encode($input)
+        ]);
+        
         $input = $this->inputDefault($input);
         
         $newFile = $this->getPathFile($input);
@@ -38,13 +42,8 @@ class WatermarkLogic
         
         $image->save($newFile);
         
-        $event = [
-            'source'=>$newFile,
-            'watermark'=>$input['watermark'],
-            'position'=>$input['position'],
-            'x'=>$input['x'],
-            'y'=>$input['y'],
-        ];
+        $event = $input;
+        $event ['source']= $newFile;
         
         if( !$this->emitEvent($this->eventSuccess, $event)) {
             return false;
