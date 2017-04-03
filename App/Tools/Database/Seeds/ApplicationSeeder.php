@@ -18,7 +18,7 @@ class ApplicationSeeder extends InstallSeeder
             'description'=>'Application Tools',
             'nameSpace'=>'Melisa.tools',
             'typeSecurity'=>'art',
-            'version'=>'1.1.0'
+            'version'=>'1.1.1'
         ]);
         
     }
