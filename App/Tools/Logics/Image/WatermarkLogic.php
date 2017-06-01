@@ -1,4 +1,6 @@
-<?php namespace App\Tools\Logics\Image;
+<?php
+
+namespace App\Tools\Logics\Image;
 
 use Intervention\Image\ImageManagerStatic as Image;
 use Melisa\core\LogicBusiness;
@@ -13,13 +15,13 @@ class WatermarkLogic
     protected $imageManager;
     protected $eventSuccess = 'tools.image.watermark.success';
 
-    public function __construct(Image $imageManager) {
+    public function __construct(Image $imageManager)
+    {
         $this->imageManager = $imageManager;
     }
     
     public function init(array $input)
-    {
-        
+    {        
         $this->debug('Init logic watermark {d}', [
             'd'=>json_encode($input)
         ]);
@@ -49,8 +51,7 @@ class WatermarkLogic
             return false;
         }
         
-        return $newFile;
-        
+        return $newFile;        
     }
     
     public function inputDefault(&$input)
@@ -65,19 +66,16 @@ class WatermarkLogic
     }
     
     public function existFile($pathFile)
-    {
-        
+    {        
         if( file_exists($pathFile)) {
             return true;
         }
         
-        return false;
-        
+        return false;        
     }
     
     public function getPathFile(array &$input)
-    {
-        
+    {        
         $pathInfo = pathinfo($input['source']);
         
         if( !$input['generateNewFile']) {
@@ -91,8 +89,7 @@ class WatermarkLogic
         return $pathInfo['dirname'] . '/' . 
                 $pathInfo['filename'] . 
                 $input['suffix'] . '.' .
-                $pathInfo['extension'];
-        
+                $pathInfo['extension'];        
     }
     
 }

@@ -1,4 +1,6 @@
-<?php namespace App\Tools\Logics\Image;
+<?php
+
+namespace App\Tools\Logics\Image;
 
 use Intervention\Image\ImageManagerStatic as Image;
 use Melisa\core\LogicBusiness;
@@ -13,13 +15,13 @@ class ResizeLogic
     protected $imageManager;
     protected $eventSuccess = 'tools.image.resize.success';
 
-    public function __construct(Image $imageManager) {
+    public function __construct(Image $imageManager)
+    {
         $this->imageManager = $imageManager;
     }
     
     public function init(array $input)
-    {
-        
+    {        
         $input = $this->inputDefault($input);
         
         $newFile = $this->getPathFile($input);
@@ -48,8 +50,7 @@ class ResizeLogic
             return false;
         }
         
-        return $newFile;
-        
+        return $newFile;        
     }
     
     public function fireEvent(array &$event)
@@ -71,35 +72,28 @@ class ResizeLogic
     }
     
     public function existFile($pathFile)
-    {
-        
+    {        
         if( file_exists($pathFile)) {
             return true;
-        }
-        
-        return false;
-        
+        }        
+        return false;        
     }
     
     public function getPathFile(array &$input)
-    {
-        
+    {        
         $pathInfo = pathinfo($input['pathFile']);
         
         if( !$input['generateNewFile']) {
             return $input['pathFile'];
-        }
-        
+        }        
         if( !$input['suffixSize']) {
             return $input['pathFile'];
-        }
-        
+        }        
         return $pathInfo['dirname'] . '/' . 
                 $pathInfo['filename'] . '-' .
                 $input['width'] . 'x' . 
                 $input['height'] . '.' .
-                $pathInfo['extension'];
-        
+                $pathInfo['extension'];        
     }
     
 }

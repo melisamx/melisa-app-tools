@@ -1,4 +1,6 @@
-<?php namespace App\Tools\Http\Controllers\Api\v1;
+<?php
+
+namespace App\Tools\Http\Controllers\Api\v1;
 
 use Melisa\Laravel\Http\Controllers\Controller;
 use App\Tools\Http\Requests\Image\ResizeRequest;

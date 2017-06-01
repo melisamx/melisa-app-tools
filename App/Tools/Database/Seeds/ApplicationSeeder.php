@@ -1,4 +1,6 @@
-<?php namespace App\Tools\Database\Seeds;
+<?php
+
+namespace App\Tools\Database\Seeds;
 
 use Melisa\Laravel\Database\InstallSeeder;
 
@@ -18,7 +20,7 @@ class ApplicationSeeder extends InstallSeeder
             'description'=>'Application Tools',
             'nameSpace'=>'Melisa.tools',
             'typeSecurity'=>'art',
-            'version'=>'1.1.1'
+            'version'=>'1.2.0'
         ]);
         
     }

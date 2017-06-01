@@ -1,4 +1,6 @@
-<?php namespace App\Tools;
+<?php
+
+namespace App\Tools;
 
 use Melisa\Laravel\ApplicationBase;
 

@@ -1,4 +1,6 @@
-<?php namespace App\Tools\Database\Seeds\Modules;
+<?php
+
+namespace App\Tools\Database\Seeds\Modules;
 
 use Melisa\Laravel\Database\InstallSeeder;
 
@@ -11,8 +13,7 @@ class BarcordesSeeder extends InstallSeeder
 {
     
     public function run()
-    {
-        
+    {        
         $this->installModule([
             [
                 'name'=>'Generar códigos de barras 1D',
@@ -36,8 +37,7 @@ class BarcordesSeeder extends InstallSeeder
                     'pattern'=>'create'
                 ],
             ],
-        ]);
-        
+        ]);        
     }
     
 }

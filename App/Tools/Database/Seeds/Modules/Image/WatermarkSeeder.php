@@ -1,4 +1,6 @@
-<?php namespace App\Tools\Database\Seeds\Modules\Image;
+<?php
+
+namespace App\Tools\Database\Seeds\Modules\Image;
 
 use Melisa\Laravel\Database\InstallSeeder;
 
@@ -11,8 +13,7 @@ class WatermarkSeeder extends InstallSeeder
 {
     
     public function run()
-    {
-        
+    {        
         $this->installModule([
             [
                 'name'=>'Agregar marca de agua a imagen',
@@ -36,8 +37,7 @@ class WatermarkSeeder extends InstallSeeder
                 ],
                 'listener'=>'event.tools.image.watermark',
             ],
-        ]);
-        
+        ]);        
     }
     
 }

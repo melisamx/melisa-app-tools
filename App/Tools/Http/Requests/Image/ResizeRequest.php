@@ -1,4 +1,6 @@
-<?php namespace App\Tools\Http\Requests\Image;
+<?php
+
+namespace App\Tools\Http\Requests\Image;
 
 use Melisa\Laravel\Http\Requests\Generic;
 use Melisa\Sanitizes\BeforeSanitize;
