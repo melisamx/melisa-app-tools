@@ -14,5 +14,4 @@ class RouteServiceProvider extends RouteService
     
     public $namespace = 'App\Tools\Http\Controllers';
     
-        
 }

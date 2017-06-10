@@ -13,8 +13,7 @@ class DatabaseSeeder extends InstallSeeder
 {
     
     public function run()
-    {
-                
+    {                
         $this->call(ApplicationSeeder::class);
         $this->call(ModulesSeeder::class);
         $this->cleanLogs();
